@@ -1,6 +1,6 @@
 {
   "name": "useiife",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "The useIIFE composable provides a powerful way to load and manage external scripts in your application.",
   "keywords": [
     "IIFE",
@@ -10,7 +10,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && vite build --mode vue && vite build --mode react && vite build --mode angular && vite build --mode svelte",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "author": {
@@ -33,16 +33,20 @@
     "README.md",
     "LICENSE"
   ],
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
   "devDependencies": {
     "typescript": "~5.8.3",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
-    "@unhead/angular": "^2.0.10",
-    "@unhead/react": "^2.0.10",
-    "@unhead/svelte": "^2.0.10",
-    "@unhead/vue": "^2.0.10",
-    "ufo": "^1.6.1",
     "unhead": "^2.0.10"
   }
 }
