@@ -1,5 +1,5 @@
 {
-  "name": "useiife",
+  "name": "@useiife/useiife-react",
   "version": "0.1.6",
   "description": "The useIIFE composable provides a powerful way to load and manage external scripts in your application.",
   "keywords": [
@@ -41,12 +41,15 @@
       "require": "./dist/index.umd.js"
     }
   },
+  "peerDependencies": {
+    "react": ">=18"
+  },
   "devDependencies": {
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
     "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
-    "unhead": "^2.0.10"
+    "@unhead/react": "^2.0.10"
   }
 }

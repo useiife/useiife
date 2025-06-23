@@ -1,3 +1,5 @@
+import { useScript } from '@unhead/react'
+import type { UseScriptOptions } from 'unhead/types';
 const PROVIDERS = ['jsdelivr', 'cdnjs', 'unpkg', 'generic'] as const
 type Provider = (typeof PROVIDERS)[number]
 
@@ -32,4 +34,8 @@ export const getProviderUrl = (npmOptions: NpmOptions | string): string => {
     default:
       return `https://unpkg.com/${npmOptions.name}@${npmOptions.version}/${npmOptions.file || ''}`
   }
+}
+
+export const useIIFE = (npmOptions: NpmOptions | string, _options?: UseScriptOptions<Record<string | symbol, any>> | undefined) => {
+  return useScript({ src: getProviderUrl(npmOptions) }, _options)
 }

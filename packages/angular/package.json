@@ -1,5 +1,5 @@
 {
-  "name": "useiife",
+  "name": "@useiife/useiife-angular",
   "version": "0.1.6",
   "description": "The useIIFE composable provides a powerful way to load and manage external scripts in your application.",
   "keywords": [
@@ -41,12 +41,16 @@
       "require": "./dist/index.umd.js"
     }
   },
+  "peerDependencies": {
+    "@angular/common": "^19.2.4",
+    "@angular/core": "^19.2.4"
+  },
   "devDependencies": {
     "typescript": "~5.8.3",
     "vite": "^6.3.5",
     "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
-    "unhead": "^2.0.10"
+    "@unhead/angular": "^2.0.10"
   }
 }

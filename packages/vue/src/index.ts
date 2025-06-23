@@ -1,6 +1,5 @@
-import { useScript } from 'unhead'
-import { createHead } from 'unhead/client'
-import type { UseScriptOptions } from 'unhead/types';
+import { useScript } from '@unhead/vue'
+import { type UseScriptOptions } from '@unhead/vue'
 const PROVIDERS = ['jsdelivr', 'cdnjs', 'unpkg', 'generic'] as const
 type Provider = (typeof PROVIDERS)[number]
 
@@ -37,8 +36,6 @@ export const getProviderUrl = (npmOptions: NpmOptions | string): string => {
   }
 }
 
-const head = createHead()
-
 export const useIIFE = (npmOptions: NpmOptions | string, _options?: UseScriptOptions<Record<string | symbol, any>> | undefined) => {
-  return useScript(head, { src: getProviderUrl(npmOptions) }, _options)
+  return useScript({ src: getProviderUrl(npmOptions) }, _options)
 }
